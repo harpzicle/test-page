@@ -4,6 +4,22 @@
     <title>
       Test Page 19
     </title>
+    <script>
+function regional(){
+  text = document.getElementById("reg-input").value
+  big = "";
+  small = "";
+  alphabet = "abcdefghijklmnopqrstuvwxyz";
+  REG = 127462;
+
+  for (const letter of text.toLowerCase()) {
+    big += alphabet.includes(letter) ? (":regional_indicator_"+letter+":") : "   ";
+    small += alphabet.includes(letter) ? String.fromCodePoint(alphabet.search(letter) + REG) : " ";
+  }
+  document.getElementById("reg-output-big") = big;
+  document.getElementById("reg-output-small") = small;
+}
+    </script>
   </head>
   <body>
     <h1>
@@ -23,5 +39,14 @@
       Copy this textarea if you just want a zero-width space:
     </p>
     <textarea rows="1" cols="4">&#8203;</textarea>
+    <p>
+      Write text in here to get regional indicators.
+    </p>
+    <textarea id="reg-input" oninput="regional()"></textarea>
+    <p>
+      And here's the output.
+    </p>
+    <textarea id="reg-output-big"></textarea>
+    <textarea id="reg-output-small"></textarea>
   </body>
 </html>
