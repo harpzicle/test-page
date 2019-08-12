@@ -9,6 +9,6 @@ function regional(){
     big += alphabet.includes(letter) ? (":regional_indicator_"+letter+":") : "   ";
     small += alphabet.includes(letter) ? String.fromCodePoint(alphabet.search(letter) + REG) : " ";
   }
-  document.getElementById("reg-output-big") = big;
-  document.getElementById("reg-output-small") = small;
+  document.getElementById("reg-output-big").value = big;
+  document.getElementById("reg-output-small").value = small;
 }
