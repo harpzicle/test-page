@@ -3,9 +3,10 @@
   <head>
     <link rel="stylesheet" href="main.css" />
     <title>
-      Test Page 31
+      Test Page 32
     </title>
     <script src="regional.js"></script>
+    <script scr="copy.js"></script>
   </head>
   <body>
     <h1>
@@ -30,13 +31,23 @@
     <p>
       Write text in here to get regional indicators.
     </p>
-    <textarea id="reg-input" oninput="regional()"></textarea>
+    <input type="text" id="reg-input" oninput="regional()"></input>
     <p>
       And here's the output.
     </p>
     <div class="reg-output">
-      <textarea id="reg-output-big"></textarea>
-      <textarea id="reg-output-small"></textarea>
+      <div class="item out-big">
+        <textarea id="reg-output-big"></textarea>
+      </div>
+      <div class="item out-small">
+        <textarea id="reg-output-small"></textarea>
+      </div>
+      <div class="item copy-big">
+        <button onclick="copy('big')">Copy</button>
+      </div>
+      <div class="item copy-small">
+        <button onclick="copy('small')">Copy</button>
+      </div>
     </div>
     <hr/>
   </body>

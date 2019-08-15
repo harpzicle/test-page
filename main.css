@@ -1,6 +1,18 @@
 .reg-output {
     display: grid;
-    grid-template-columns: 10em 10em;
-    grid-template-rows: 4em;
+    grid-template-columns: 8rem 8rem;
+    grid-template-rows: 4rem 4rem;
     grid-gap: 1rem;
+}
+
+body {
+    font-family: "Myriad Pro", "Century Gothic", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+    font-size: 24pt;
+}
+
+h1 {
+    font-size: 30pt;
 }
