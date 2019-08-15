@@ -6,8 +6,8 @@ function regional(){
   REG = 127462;
 
   for (const letter of text.toLowerCase()) {
-    big += alphabet.includes(letter) ? (":regional_indicator_"+letter+":") : "   ";
-    small += alphabet.includes(letter) ? String.fromCodePoint(alphabet.search(letter) + REG) : " ";
+    big += alphabet.includes(letter) ? (":regional_indicator_"+letter+": ") : "   ";
+    small += alphabet.includes(letter) ? (String.fromCodePoint(alphabet.search(letter) + REG)+" ") : "  ";
   }
   document.getElementById("reg-output-big").value = big;
   document.getElementById("reg-output-small").value = small;
