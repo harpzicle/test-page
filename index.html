@@ -3,7 +3,7 @@
   <head>
     <link rel="stylesheet" href="main.css" />
     <title>
-      Test Page 33
+      Test Page 36
     </title>
     <script src="regional.js"></script>
     <script src="copy.js"></script>
@@ -12,19 +12,19 @@
     <h1>
       Welcome to my channel.
     </h1>
-    <hr/>
+    <hr />
     <h2>
       Zero-width Spacing
     </h2>
     <p>
-      Copy this if you want to mention everyone without doing it for real:
+      Click here if you want to mention everyone without doing it for real:
     </p>
-    <input type="text" value="&amp;&#8203;everyone" />
+    <textarea type="text" onfocus="copy()" readonly="true">&amp;&#8203;everyone</textarea>
     <p>
-      Copy this if you just want a zero-width space:
+      Click here if you just want a zero-width space:
     </p>
-    <input type="text" value="&#8203" />
-    <hr/>
+    <textarea type="text" onfocus="copy()" readonly="true">&#8203</textarea>
+    <hr />
     <h2>
       Regional Indicators
     </h2>
@@ -36,19 +36,9 @@
       And here's the output.
     </p>
     <div class="reg-output">
-      <div class="item out-big">
-        <input type="text" class="regional" id="reg-output-big"></input>
-      </div>
-      <div class="item out-small">
-        <input type="text" class="regional" id="reg-output-small"></input>
-      </div>
-      <div class="item copy copy-big">
-        <button onclick="copy('big')">Copy</button>
-      </div>
-      <div class="item copy copy-small">
-        <button onclick="copy('small')">Copy</button>
-      </div>
+      <textarea type="text" class="regional" id="reg-output-big" onfocus="copy()" readonly="true"></textarea>
+      <textarea type="text" class="regional" id="reg-output-small" onfocus="copy()" readonly="true"></textarea>
     </div>
-    <hr/>
+    <hr />
   </body>
 </html>
