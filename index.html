@@ -3,10 +3,12 @@
   <head>
     <link rel="stylesheet" href="main.css" />
     <title>
-      Test Page 37
+      Test Page 38
     </title>
     <script src="regional.js"></script>
     <script src="copy.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
     <h1>
@@ -19,11 +21,11 @@
     <p>
       Click here if you want to mention everyone without doing it for real:
     </p>
-    <textarea type="text" onfocus="copy()" readonly="true">@&#8203;everyone</textarea>
+    <div class="text" onclick="copy(this)">@&#8203;everyone</div>
     <p>
       Click here if you just want a zero-width space:
     </p>
-    <textarea type="text" onfocus="copy()" readonly="true">&#8203</textarea>
+    <div class="text" onclick="copy(this)" readonly="true">&#8203</div>
     <hr />
     <h2>
       Regional Indicators
@@ -31,13 +33,13 @@
     <p>
       Write text in here to get regional indicators.
     </p>
-    <input type="text" id="reg-input" oninput="regional()"></input>
+    <input class="text" type="text" id="reg-input" oninput="regional()"></input>
     <p>
       Click these to copy them.
     </p>
     <div class="reg-output">
-      <textarea type="text" class="regional" id="reg-output-big" onfocus="copy()" readonly="true"></textarea>
-      <textarea type="text" class="regional" id="reg-output-small" onfocus="copy()" readonly="true"></textarea>
+      <div class="text" class="regional" id="reg-output-big" onclick="copy(this)"></div>
+      <div class="text" class="regional" id="reg-output-small" onclick="copy(this)" readonly="true"></div>
     </div>
     <hr />
   </body>

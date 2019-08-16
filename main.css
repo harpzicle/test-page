@@ -6,9 +6,9 @@
 }
 .reg-output {
     display: grid;
-    grid-template-columns: 14rem 14rem;
+    grid-template-columns: 47.5% 47.5%;
     grid-template-rows: 6rem;
-    grid-gap: 1rem;
+    grid-gap: 5%;
 }
 
 body {
@@ -29,27 +29,36 @@ h1 {
     font-size: 30pt;
 }
 
-textarea,input[type=text],hr {
+.text,hr {
     border: var(--border-main);
     background-color: var(--bg-color-main);
     color: var(--text-color);
 }
 
-textarea,input[type=text] {
+.text {
     font-family: "Source Code Pro", "Courier New", Courier, monospace;
     width: 100%;
-    max-width: 29rem;
-    padding: 12px 12px;
+    min-width: 5rem;
+    max-width: 33rem;
+    font-size: 12pt;
+    padding: 1rem;
     border-radius: 5px;
     overflow: hidden;
     resize: none;
+    display: table-cell;
+    vertical-align: middle;
     box-sizing: border-box;
     -webkit-transition: 0.75s;
     transition: 0.75s;
     outline: none;
+    white-space: pre-wrap;      /* CSS3 */   
+    white-space: -moz-pre-wrap; /* Firefox */    
+    white-space: -pre-wrap;     /* Opera <7 */   
+    white-space: -o-pre-wrap;   /* Opera 7 */    
+    word-wrap: break-word;      /* IE */
 }
 
-textarea:focus,input[type=text]:focus {
+.text:focus {
     border: var(--border-focus);
 }
 

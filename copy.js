@@ -23,3 +23,12 @@ function copy() {
     document.execCommand('copy');
     clearSelection();
 }
+
+function copy(container) {
+  var range = document.createRange();
+  range.selectNode(container); //changed here
+  window.getSelection().removeAllRanges(); 
+  window.getSelection().addRange(range); 
+  document.execCommand("copy");
+  window.getSelection().removeAllRanges();
+}
