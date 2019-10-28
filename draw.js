@@ -34,7 +34,7 @@ function drawHands(){
     
     drawTime(hour, hr);
     //minute
-    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60));
+    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60)+(ms*Math.PI/(30000*60)));
     drawTime(minute, min);
     // second
     second = (second*Math.PI/30) + (ms*Math.PI/30000);
