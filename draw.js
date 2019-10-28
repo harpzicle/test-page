@@ -10,19 +10,7 @@ ctx.dot = function(x, y, r) {
     ctx.fill();
 };
 
-function drawClockPosition(num) {
-    num %= 12;
-    var angle = 2 * Math.PI / 12 * num;
-    var y = 1 - clockRatio * Math.cos(angle);
-    var x = 1 + clockRatio * Math.sin(angle);
-    y *= size / 2;
-    x *= size / 2;
-    x = Math.round(x);
-    y = Math.round(y);
-    ctx.dot(x, y, dotSize);
-}
-
-function drawClockPositions(n, radius) {
+function drawClockPositions(n, n_minor, major_r, minor_r) {
     for (var i=0; i<n; i++) {
         var angle = 2 * Math.PI / n * i;
         var y = 1 - clockRatio * Math.cos(angle);
@@ -31,7 +19,10 @@ function drawClockPositions(n, radius) {
         x *= size / 2;
         x = Math.round(x);
         y = Math.round(y);
-        ctx.dot(x, y, radius);
+        if (i % n_minor)
+            ctx.dot(x, y, minor_r);
+        else 
+            ctx.dot(x, y, major_r);
     }
 }
 
@@ -51,6 +42,7 @@ function drawHands(){
     drawTime(minute, min);
     // second
     second = (second*Math.PI/30) + (ms*Math.PI/30000);
+    ctx.fillStyle = "#f00";
     drawTime(second, sec);
 }
 
@@ -77,10 +69,11 @@ function drawClock() {
     else if (width < height) {
         ctx.translate(0,(height - width)/2);
     }
-    ctx.fillStyle = "rgb(255,255,255,1)";
-    ctx.dot(size/2, size/2, dotSize);
-    drawClockPositions(12, 4);
-    drawClockPositions(60, 0.8);
+    ctx.fillStyle = "#fff";
+    ctx.dot(size/2, size/2, dotSize/2);
+    ctx.fillStyle = "#555";
+    drawClockPositions(60, 5, 3, 0.8);
+    ctx.fillStyle = "#fff";
     drawHands();
 }
 
