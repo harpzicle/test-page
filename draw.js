@@ -72,7 +72,7 @@ function drawClock() {
     ctx.fillStyle = "#fff";
     ctx.dot(size/2, size/2, dotSize/2);
     ctx.fillStyle = "#555";
-    drawClockPositions(60, 5, 3, 0.8);
+    drawClockPositions(60, 5, 3, 1.2);
     ctx.fillStyle = "#fff";
     drawHands();
 }
