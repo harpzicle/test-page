@@ -22,6 +22,19 @@ function drawClockPosition(num) {
     ctx.dot(x, y, dotSize);
 }
 
+function drawClockPositions(n, radius) {
+    for (var i=0; i<n; i++) {
+        var angle = 2 * Math.PI / n * i;
+        var y = 1 - clockRatio * Math.cos(angle);
+        var x = 1 + clockRatio * Math.sin(angle);
+        y *= size / 2;
+        x *= size / 2;
+        x = Math.round(x);
+        y = Math.round(y);
+        ctx.dot(x, y, radius);
+    }
+}
+
 function drawHands(){
     var now = new Date();
     var hour = now.getHours();
@@ -66,9 +79,8 @@ function drawClock() {
     }
     ctx.fillStyle = "rgb(255,255,255,1)";
     ctx.dot(size/2, size/2, dotSize);
-    for (var i=0;i<12;i++) {
-        drawClockPosition(i);
-    }
+    drawClockPositions(12, 4);
+    drawClockPositions(60, 0.8);
     drawHands();
 }
 
