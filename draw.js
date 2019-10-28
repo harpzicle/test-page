@@ -3,6 +3,12 @@ var hr = 0.9, min = 0.81, sec = 0.72;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 
+ctx.dot = function(x, y, r) {
+    ctx.beginPath();
+    ctx.arc(x,y,r, 0,2*Math.PI);
+    ctx.fill();
+};
+
 function drawClockPosition(num) {
     num %= 12;
     var angle = 2 * Math.PI / 12 * num;
@@ -12,7 +18,7 @@ function drawClockPosition(num) {
     x *= size / 2;
     x = Math.round(x);
     y = Math.round(y);
-    ctx.fillRect(x-1, y-1, 2, 2);
+    ctx.dot(x, y, 4);
 }
 
 function drawHands(){
@@ -41,7 +47,7 @@ function drawTime(param, mult) {
     x *= size / 2;
     //x = Math.round(x);
     //y = Math.round(y);
-    ctx.fillRect(x-1, y-1, 2, 2);
+    ctx.dot(x, y, 4);
 }
 
 function drawClock() {
@@ -58,7 +64,7 @@ function drawClock() {
         ctx.translate(0,(height - width)/2);
     }
     ctx.fillStyle = "rgb(255,255,255,1)";
-    ctx.fillRect(size/2-1, size/2-1,2,2);
+    ctx.dot(size/2, size/2,4);
     for (var i=0;i<12;i++) {
         drawClockPosition(i);
     }
