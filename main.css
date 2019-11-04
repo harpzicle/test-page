@@ -7,7 +7,7 @@
 }
 
 :root {
-    --bg-color-main: #111;
+    --bg-color-main: #000;
     --border-main: 3px solid #444;
     --border-focus: 3px solid #cce;
     --text-color: #ddd;
@@ -82,3 +82,7 @@ hr {
     margin-bottom: 0.75rem;
 }
 
+a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+}
