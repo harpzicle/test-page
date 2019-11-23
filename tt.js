@@ -9,7 +9,7 @@ var html_info = document.getElementById("info");
 var original = "<span id=\"a\">0</span> &times; <span id=\"b\">0</span> = <span id=\"c\"></span>";
 var game_interval = setInterval(game_timer, 20);
 
-var a=0, b=0, c, score=0, time=Date.now(), limit=25, count = 0;
+var a=0, b=0, c, score=0, time=Date.now(), limit=150, count = 0;
 var old_a=0, old_b=0;
 var play = true;
 

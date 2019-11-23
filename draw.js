@@ -1,5 +1,5 @@
 var clockRatio = 0.99, size;
-var hr = 0.9, min = 0.81, sec = 0.72; 
+var hr = 0.4, min = 0.8, sec = 0.9; 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 var dotSize = 4;
@@ -32,18 +32,28 @@ function drawHands(){
     var minute = now.getMinutes();
     var second = now.getSeconds();
     var ms = now.getMilliseconds();
-    //hour
-    hour = hour%12;
-    hour = (hour*Math.PI/6)+(minute*Math.PI/(6*60))+(second*Math.PI/(360*60));
-    
-    drawTime(hour, hr);
-    //minute
-    minute = (minute*Math.PI/30)+(second*Math.PI/(30*60)+(ms*Math.PI/(30000*60)));
-    drawTime(minute, min);
-    // second
-    second = (second*Math.PI/30) + (ms*Math.PI/30000);
+
+
+    second = (second + ms/1000) * 2*Math.PI / 60;
+
     ctx.fillStyle = "#f00";
+    ctx.strokeStyle = "#500";
     drawTime(second, sec);
+    
+    
+    minute = (minute + second/60 + ms/60000) * 2*Math.PI / 60;
+
+    ctx.fillStyle="#fff";
+    ctx.strokeStyle="#555";
+    drawTime(minute, min);    
+    
+    
+    hour = hour%12;
+    hour = (hour + minute/60 + second/3600 + ms/3600000) * 2*Math.PI / 12;
+
+    ctx.fillStyle="#fff";
+    ctx.strokeStyle="#555";
+    drawTime(hour, hr);
 }
 
 function drawTime(param, mult) {
@@ -53,6 +63,11 @@ function drawTime(param, mult) {
     x *= size / 2;
     //x = Math.round(x);
     //y = Math.round(y);
+    ctx.beginPath();
+    ctx.setLineDash([1,9]);
+    ctx.moveTo(size/2, size/2);
+    ctx.lineTo(x, y);
+    ctx.stroke();
     ctx.dot(x, y, dotSize);
 }
 
@@ -69,12 +84,14 @@ function drawClock() {
     else if (width < height) {
         ctx.translate(0,(height - width)/2);
     }
-    ctx.fillStyle = "#fff";
-    ctx.dot(size/2, size/2, dotSize/2);
+
     ctx.fillStyle = "#555";
     drawClockPositions(60, 5, 3, 1.2);
     ctx.fillStyle = "#fff";
+    ctx.strokeStyle = "#555";
     drawHands();
+    ctx.fillStyle = "#fff";
+    ctx.dot(size/2, size/2, dotSize/2);
 }
 
 setInterval(drawClock, 20);
