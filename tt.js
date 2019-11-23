@@ -3,13 +3,22 @@ var html_b = document.getElementById("b")
 var html_c = document.getElementById("c")
 var html_gratz = document.getElementById("gratz");
 var html_wrong = document.getElementById("wrong");
+var html_tt = document.getElementById("tt");
+var html_info = document.getElementById("info");
 
 var original = "<span id=\"a\">0</span> &times; <span id=\"b\">0</span> = <span id=\"c\"></span>";
+var game_interval = setInterval(game_timer, 20);
 
-var timer_interval = setInterval(timer, 20);
+var a=0, b=0, c, score=0, time=Date.now(), limit=25, count = 0;
+var old_a=0, old_b=0;
+var play = true;
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+function pair_equal(a,b,c,d) {
+    return (a==c && b==d) || (a==d && b==c);
 }
 
 function timer() {
@@ -17,12 +26,13 @@ function timer() {
     html_gratz.innerHTML = `You've got ${score}/${count} questions in ${length.toFixed(1)} seconds.`;
 }
 
-var a=0, b=0, c, score=0, time=Date.now(), limit=15, count = 0;
-var old_a=0, old_b=0;
-var play = true;
-
-function pair_equal(a,b,c,d) {
-    return (a==c && b==d) || (a==d && b==c);
+function game_timer() {
+    if (play) {
+        timer();
+    }
+    if (Date.now() - time > (limit * 1000)) {
+        stop_game();
+    }
 }
 
 function reset() {
@@ -39,17 +49,17 @@ function reset() {
 }
 
 function restart() {
-    a=b=c=score=count=old_a=old_b=0;
+    a=b=old_a=old_b=score=count=0;
+    reset();
+    c="";
     play = true;
     time=Date.now();
-    document.getElementById("tt").style.display = "block";
-    timer_interval = setInterval(timer, 20);
+    html_tt.style.display = "block";
 }
 
 function stop_game() {
-    document.getElementById("tt").style.display = "none";
-    clearInterval(timer_interval);
-    timer();
+    if (!play) return;
+    html_tt.style.display = "none";
     play = false;
 }
 
@@ -63,22 +73,21 @@ document.onkeydown = function(e) {
             count++;
             reset();
         }
-        else restart();
+        else { 
+            restart();
+            return;
+        }
     }
     else if (e.key == "Escape") {
         stop_game();
     }
-    else c += e.key;
+    else if ("1234567890".includes(e.key)) {
+        c += e.key;
+    }
     if (a*b == c) {
         score++;
         count++;
         reset();
-    }
-    if (count == limit) {
-        var length = Date.now() - time;
-        length /= 1000;
-        stop_game();
-        play = false;
     }
     html_c.innerHTML = c;
 }
