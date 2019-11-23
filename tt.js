@@ -17,7 +17,7 @@ function timer() {
     html_gratz.innerHTML = `You've got ${score}/${count} questions in ${length.toFixed(1)} seconds.`;
 }
 
-var a=0, b=0, c, score=0, time=Date.now(), limit=5, count = 0;
+var a=0, b=0, c, score=0, time=Date.now(), limit=15, count = 0;
 var old_a=0, old_b=0;
 var play = true;
 
@@ -46,6 +46,13 @@ function restart() {
     timer_interval = setInterval(timer, 20);
 }
 
+function stop_game() {
+    document.getElementById("tt").style.display = "none";
+    clearInterval(timer_interval);
+    timer();
+    play = false;
+}
+
 document.onkeydown = function(e) {
     if (e.key == "Backspace") {
         e.preventDefault();
@@ -58,6 +65,9 @@ document.onkeydown = function(e) {
         }
         else restart();
     }
+    else if (e.key == "Escape") {
+        stop_game();
+    }
     else c += e.key;
     if (a*b == c) {
         score++;
@@ -67,9 +77,7 @@ document.onkeydown = function(e) {
     if (count == limit) {
         var length = Date.now() - time;
         length /= 1000;
-        document.getElementById("tt").style.display = "none";
-        clearInterval(timer_interval);
-        timer();
+        stop_game();
         play = false;
     }
     html_c.innerHTML = c;
