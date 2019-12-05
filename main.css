@@ -1,8 +1,8 @@
 @font-face {
     font-family: "Myriad Pro";
-    src: url("Myriad Pro Regular.ttf") format("ttf")
-      url("Myriad Pro Bold.ttf") format("ttf")
-      url("Myriad Pro Italic.ttf") format("ttf")
+    src: url("Myriad Pro Regular.ttf") format("ttf"),
+      url("Myriad Pro Bold.ttf") format("ttf"),
+      url("Myriad Pro Italic.ttf") format("ttf"),
       url("Myriad Pro Bold Italic.ttf") format("ttf");
 }
 
