@@ -21,7 +21,7 @@
 }
 
 body {
-    font-family: "Myriad Pro", "Century Gothic", Helvetica, Arial, sans-serif;
+    font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
     color: var(--text-color);
     background-color: var(--bg-color-main); 
 }
