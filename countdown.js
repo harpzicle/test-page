@@ -22,7 +22,7 @@ function update_time() {
     
     var dys = Math.floor(diff);
     
-    day.innerHTML = dys;
+    day.innerHTML = dys + " day" + (dys==1 ? "" : "s");
     hour.innerHTML = ("00" + hrs).slice(-2);
     minute.innerHTML = ("00" + min).slice(-2);
     second.innerHTML = ("00" + sec).slice(-2);
