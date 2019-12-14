@@ -1,9 +1,9 @@
 @font-face {
     font-family: "Myriad Pro";
     src: url("Myriad Pro Regular.ttf") format("ttf"),
-      url("Myriad Pro Bold.ttf") format("ttf"),
-      url("Myriad Pro Italic.ttf") format("ttf"),
-      url("Myriad Pro Bold Italic.ttf") format("ttf");
+         url("Myriad Pro Bold.ttf") format("ttf"),
+         url("Myriad Pro Italic.ttf") format("ttf"),
+         url("Myriad Pro Bold Italic.ttf") format("ttf");
 }
 
 :root {
@@ -12,6 +12,7 @@
     --border-focus: 3px solid #cce;
     --text-color: #ddd;
 }
+
 .reg-output {
     display: grid;
     grid-template-columns: 47.5% 47.5%;
@@ -25,7 +26,7 @@ body {
     background-color: var(--bg-color-main); 
 }
 
-h1,h2 {
+h1, h2 {
     color: #fff;
 }
 
@@ -37,7 +38,7 @@ h1 {
     font-size: 30pt;
 }
 
-.text,hr {
+.text, hr {
     border: var(--border-main);
     background-color: var(--bg-color-main);
     color: var(--text-color);
