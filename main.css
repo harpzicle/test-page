@@ -46,10 +46,8 @@ h1 {
 
 .text {
     font-family: "Source Code Pro", "Courier New", Courier, monospace;
-    width: 100%;
-    min-width: 5rem;
-    max-width: 33rem;
-    font-size: 12pt;
+    width: minmax(5rem, 100%);
+    font-size: 1rem;
     padding: 1rem;
     border-radius: 5px;
     overflow: hidden;
