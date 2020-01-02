@@ -3,14 +3,21 @@ var html_b = document.getElementById("b")
 var html_gratz = document.getElementById("gratz");
 var html_wrong = document.getElementById("wrong");
 var html_tt = document.getElementById("tt");
+var html_cont = document.getElementById("cont");
 var html_info = document.getElementById("info");
+var html_ans1 = document.getElementById("one");
+var html_ans2 = document.getElementById("two");
+var html_ans3 = document.getElementById("three");
+var html_ans4 = document.getElementById("four");
 
 var original = "<span id=\"a\">0</span> &times; <span id=\"b\">0</span>";
 var game_interval = setInterval(game_timer, 20);
 
+var htmls = [html_ans1, html_ans2, html_ans3, html_ans4];
+
 const MAX_TABLE = 12;
 
-var a=0, b=0, c
+var a=0, b=0;
 var count = 0; /* the number of questions attempted */
 var score = 0; 
 var time = Date.now();
@@ -47,7 +54,6 @@ function reset() {
     }
     old_a = a;
     old_b = b;
-    c = "";
     html_a.innerHTML = a;
     html_b.innerHTML = b;
 }
@@ -55,24 +61,18 @@ function reset() {
 function restart() {
     a=b=old_a=old_b=score=count=0;
     reset();
-    c="";
     play = true;
     time=Date.now();
     html_tt.style.display = "block";
+    html_cont.style.display = "grid";
 }
 
 function stop_game() {
     if (!play) return;
     html_tt.style.display = "none";
+    html_cont.style.display = "none";
     play = false;
 }
-
-var html_ans1 = document.getElementById("one");
-var html_ans2 = document.getElementById("two");
-var html_ans3 = document.getElementById("three");
-var html_ans4 = document.getElementById("four");
-
-var htmls = [html_ans1, html_ans2, html_ans3, html_ans4];
 
 function generate_options(){
     var right = a*b;
@@ -119,6 +119,7 @@ function reset() {
         htmls[i].onclick = function(){process(answers[i]);};
     }
 }
+
 function process(ans) {
     if (a*b == ans) score++;
     count++;
