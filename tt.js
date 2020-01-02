@@ -13,6 +13,8 @@ var a=0, b=0, c, score=0, time=Date.now(), limit=150, count = 0;
 var old_a=0, old_b=0;
 var play = true;
 
+const MAX_TABLE = 12;
+
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
@@ -37,8 +39,8 @@ function game_timer() {
 
 function reset() {
     while (pair_equal(old_a, old_b, a, b)) {
-        a = random(2, 12);
-        b = random(2, 12);
+        a = random(2, MAX_TABLE);
+        b = random(2, MAX_TABLE);
     }
     old_a = a;
     old_b = b;
