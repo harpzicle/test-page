@@ -3,7 +3,6 @@ var hr = 0.4, min = 0.8, sec = 0.9;
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 const scale = window.devicePixelRatio;
-ctx.scale(scale, scale);
 var dotSize = 4;
 
 ctx.dot = function(x, y, r) {
@@ -72,8 +71,13 @@ function drawTime(param, mult) {
 }
 
 function drawClock() {
-    var width = canvas.width = document.body.clientWidth;
-    var height = canvas.height = document.body.clientHeight;
+    var width = document.body.clientWidth;
+    var height = document.body.clientHeight;
+    canvas.style.width = width + "px";
+    canvas.style.height = height + "px";
+    canvas.width = width * scale;
+    canvas.height = height * scale;
+    ctx.scale(scale, scale);
     size = Math.min(height, width);
     ctx.fillStyle = "rgba(0,0,0,1)";
     ctx.fillRect(0,0,size,size);
