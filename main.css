@@ -1,11 +1,10 @@
-/*@font-face {
+@font-face {
     font-family: "Myriad Pro";
-    src: url("Myriad Pro Regular.ttf") format("ttf"),
-         url("Myriad Pro Bold.ttf") format("ttf"),
-         url("Myriad Pro Italic.ttf") format("ttf"),
-         url("Myriad Pro Bold Italic.ttf") format("ttf");
+    font-style: normal;
+    font-weight: 400;
+    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'), url(https://mriklojn.github.io/test-page/Myriad%20Pro%20Regular.ttf) format('ttf');
 }
-*/
+
 :root {
     --bg-color-main: #000;
     --border-main: 3px solid #444;
