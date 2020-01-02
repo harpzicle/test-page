@@ -2,7 +2,7 @@ var clockRatio = 0.99, size;
 var hr = 0.4, min = 0.8, sec = 0.9; 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-const scale = window.devicePixelRatio;
+var scale = window.devicePixelRatio;
 var dotSize = 4;
 
 ctx.dot = function(x, y, r) {
@@ -63,7 +63,8 @@ function drawTime(param, mult) {
     //x = Math.round(x);
     //y = Math.round(y);
     ctx.beginPath();
-    ctx.setLineDash([1,9]);
+    ctx.lineWidth = 2.4;
+    ctx.setLineDash([2.4,7.6]);
     ctx.moveTo(size/2, size/2);
     ctx.lineTo(x, y);
     ctx.stroke();
@@ -71,17 +72,16 @@ function drawTime(param, mult) {
 }
 
 function drawClock() {
-    var width = document.body.clientWidth;
-    var height = document.body.clientHeight;
+    var width = innerWidth;
+    var height = innerHeight;
     canvas.style.width = width + "px";
     canvas.style.height = height + "px";
     canvas.width = width * scale;
     canvas.height = height * scale;
-    ctx.scale(scale, scale);
     size = Math.min(height, width);
     ctx.fillStyle = "rgba(0,0,0,1)";
+    ctx.scale(scale, scale);
     ctx.fillRect(0,0,size,size);
-    ctx.setTransform(1,0,0,1,0,0);
     if (width > height) {
         ctx.translate((width - height)/2,0);
     }
@@ -99,3 +99,4 @@ function drawClock() {
 }
 
 setInterval(drawClock, 20);
+setInterval(()=>{scale = window.devicePixelRatio;}, 300);
