@@ -1,13 +1,22 @@
+:root {
+  --main-border-style: solid #ddd;
+  --main-bg-color: #000;
+  --main-text-color: #eef;
+  --rule-color: #444;
+}
+
 body {
   max-width: 800px;
   border: 1px solid #ddd;
-  outline: 750px solid #fff;
-  margin: 16px auto;
+  border-radius: 1rem;
+  outline: 750px solid var(--main-bg-color);
+  background-color: var(--main-bg-color);
+  margin: 1rem auto;
 }
 
 body .markdown-body
 {
-  padding: 45px;
+  padding: 3rem;
   text-align: justify;
   text-justify: inter-word;
 }
@@ -18,13 +27,12 @@ body .markdown-body
 }
 
 .markdown-body {
-  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  color: #333333;
+  color: var(--main-text-color);
   overflow: hidden;
   font-family: "Myriad Pro", "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, freesans, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   word-wrap: break-word;
 }
@@ -64,11 +72,6 @@ body .markdown-body
   bottom: -0.25em;
 }
 
-.markdown-body h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
 .markdown-body img {
   border: 0;
 }
@@ -88,7 +91,7 @@ body .markdown-body
 .markdown-body pre,
 .markdown-body samp {
   font-family: monospace, monospace;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .markdown-body input {
@@ -189,14 +192,17 @@ body .markdown-body
 }
 
 .markdown-body a {
-  color: #4183c4;
+  color: hsl(210,100%,70%);
   text-decoration: none;
+  transition: 0.3s;
 }
 
 .markdown-body a:hover,
 .markdown-body a:focus,
 .markdown-body a:active {
-  text-decoration: underline;
+  text-decoration: none;
+  color: hsl(210,100%,45%);
+  transition: 0.3s;
 }
 
 .markdown-body hr {
@@ -205,7 +211,7 @@ body .markdown-body
   overflow: hidden;
   background: transparent;
   border: 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px solid var(--rule-color);
 }
 
 .markdown-body hr:before,
@@ -227,30 +233,6 @@ body .markdown-body
   margin-top: 15px;
   margin-bottom: 15px;
   line-height: 1.1;
-}
-
-.markdown-body h1 {
-  font-size: 30px;
-}
-
-.markdown-body h2 {
-  font-size: 27px;
-}
-
-.markdown-body h3 {
-  font-size: 24px;
-}
-
-.markdown-body h4 {
-  font-size: 22px;
-}
-
-.markdown-body h5 {
-  font-size: 21px;
-}
-
-.markdown-body h6 {
-  font-size: 18px;
 }
 
 .markdown-body blockquote {
@@ -284,7 +266,7 @@ body .markdown-body
 .markdown-body pre,
 .markdown-body samp {
   font-family: "Source Code Pro", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 
 .markdown-body pre {
@@ -293,17 +275,16 @@ body .markdown-body
 }
 
 .markdown-body kbd {
-  background-color: #e7e7e7;
-  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
-  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
-  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-color: #181818;
+  background-image: -moz-linear-gradient(#010101, #181818);
+  background-image: -webkit-linear-gradient(#010101, #181818);
+  background-image: linear-gradient(#010101, #181818);
   background-repeat: repeat-x;
-  border-radius: 2px;
-  border: 1px solid #cfcfcf;
-  color: #000;
+  border-radius: 3px;
+  border: 1px solid #333;
+  color: #fff;
   padding: 3px 5px;
-  line-height: 10px;
-  font: 11px "Source Code Pro", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font: 12px "Source Code Pro", Consolas, "Liberation Mono", Menlo, Courier, monospace;
   display: inline-block;
 }
 
@@ -316,9 +297,9 @@ body .markdown-body
 }
 
 .markdown-body .headerlink {
-  font: normal 400 16px fontawesome-mini;
+  font: normal 400 1rem fontawesome-mini;
   vertical-align: middle;
-  margin-left: -16px;
+  margin-left: -1rem;
   float: left;
   display: inline-block;
   text-decoration: none;
@@ -360,35 +341,39 @@ body .markdown-body
 }
 
 .markdown-body h1 {
-  padding-bottom: 0.3em;
-  font-size: 2.25em;
+  padding-bottom: 0.5rem;
+  font-size: 2.25rem;
   line-height: 1.2;
-  border-bottom: 1px solid #eee;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(90deg, #ddd, #000) 1 round;
 }
 
 .markdown-body h2 {
-  padding-bottom: 0.3em;
-  font-size: 1.75em;
-  line-height: 1.225;
-  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  font-size: 1.75rem;
+  line-height: 1.2;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, #ddd, #000 80%) 1 round;
 }
 
 .markdown-body h3 {
-  font-size: 1.5em;
-  line-height: 1.43;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(90deg, #bbb, #000 60%) 1 round;
 }
 
 .markdown-body h4 {
-  font-size: 1.25em;
+  font-size: 1.2rem;
 }
 
 .markdown-body h5 {
-  font-size: 1em;
+  font-size: 1rem;
 }
 
 .markdown-body h6 {
-  font-size: 1em;
-  color: #777;
+  font-size: 1rem;
+  color: #aaa;
 }
 
 .markdown-body p,
@@ -407,13 +392,13 @@ body .markdown-body
   height: 4px;
   padding: 0;
   margin: 16px 0;
-  background-color: #e7e7e7;
+  background-color: var(--rule-color);
   border: 0 none;
 }
 
 .markdown-body ul,
 .markdown-body ol {
-  padding-left: 2em;
+  margin-left: 1.5rem;
 }
 
 .markdown-body ul ul,
@@ -422,6 +407,7 @@ body .markdown-body
 .markdown-body ol ul {
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 1rem;
 }
 
 .markdown-body li>p {
