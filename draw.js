@@ -32,9 +32,7 @@ function drawHands(){
     var minute = now.getMinutes();
     var second = now.getSeconds();
     var ms = now.getMilliseconds();
-    
     var h,m,s;
-
 
     s = (second + ms/1000) * 2*Math.PI / 60;
 
@@ -42,13 +40,11 @@ function drawHands(){
     ctx.strokeStyle = "#500";
     drawTime(s, sec);
     
-    
     m = (minute + second/60 + ms/60000) * 2*Math.PI / 60;
 
     ctx.fillStyle="#fff";
     ctx.strokeStyle="#555";
     drawTime(m, min);    
-    
     
     hour = hour%12;
     h = (hour + minute/60 + second/3600 + ms/3600000) * 2*Math.PI / 12;
