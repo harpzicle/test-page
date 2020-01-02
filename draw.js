@@ -2,6 +2,8 @@ var clockRatio = 0.99, size;
 var hr = 0.4, min = 0.8, sec = 0.9; 
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
+const scale = window.devicePixelRatio;
+ctx.scale(scale, scale);
 var dotSize = 4;
 
 ctx.dot = function(x, y, r) {
