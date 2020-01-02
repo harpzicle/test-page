@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="main.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <style type="text/css">
+            .answers {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 1rem;
+                grid-auto-rows: minmax(20px, auto);
+            }
+            #tt {
+                font-size: 5rem;
+                text-align: center;
+                line-height: 0rem;
+            }
+            .answer {
+                vertical-align: middle;
+                line-height: 4rem;
+                font-size: 4.5rem;
+                text-align: center;
+            }
+            #one {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            #two {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            #three {
+                grid-column: 1;
+                grid-row: 2;
+            }
+            #four {
+                grid-column: 2;
+                grid-row: 2;
+            }
+        </style>
+        <title>
+            Times Tables Race
+        </title>
+    </head>
+    <body>
+        <h1>Times Tables!</h1>
+        <h2 id="tt">
+            <span id="a">0</span> &times; <span id="b">0</span>
+        </h2>
+        <div class="answers">
+            <div class="text answer" id="one"></div>
+            <div class="text answer" id="two"></div>
+            <div class="text answer" id="three"></div>
+            <div class="text answer" id="four"></div>
+        </div>
+        <h2>
+            <span id="gratz"></span> <br />
+            <span id="wrong"></span>
+        </h2>
+        <p>
+            <span id="info">Type the answers to the questions.<br />If you would like to skip a question, press Enter.<br />Once the game is over, if you would like to restart, press Enter.<br />If you want to end the game at any point, press Escape.</span>
+        </p>
+        <script src="tt_blocks.js"></script>
+    </body>
+</html>
