@@ -1,67 +1,37 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="main.css" />
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <style type="text/css">
-            .answers { /* container */
-                display: grid;
-                text-align: center;
-                grid-template-columns: repeat(2, minmax(10rem, 50%));
-                grid-gap: 1rem;
-                grid-auto-rows: minmax(20px, auto);
-            }
-            .answer { /* inner */
-                display: block;
-                line-height: 4rem;
-                font-size: 4rem;
-            }
-            .buttons { /* container */
-                display: grid;
-                grid-template-columns: 1fr 1fr 1fr;
-                grid-gap: 1rem;
-            }
-            .button { /* inner */
-                font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
-                font-size: 1.5rem;
-                text-align: center;
-            }
-            #tt {
-                font-size: 5rem;
-                text-align: center;
-                line-height: 0rem;
-                grid-column: 1 / span 2;
-                grid-row: 0;
-            }
-        </style>
-        <title>
-            Times Tables Race
-        </title>
-    </head>
-    <body>
-        <h1>Times Tables!</h1>
-        <div class="answers" id="cont">
-            <h2 id="tt">
-                <span id="a">0</span> &times; <span id="b">0</span>
-            </h2>
-            <div class="text answer" id="one"></div>
-            <div class="text answer" id="two"></div>
-            <div class="text answer" id="three"></div>
-            <div class="text answer" id="four"></div>
-        </div>
-        <h2>
-            <span id="gratz"></span> <br />
-            <span id="wrong"></span>
-        </h2>
-        <div class="buttons">
-            <div class="text button" onclick="count++;reset();">Skip question</div>
-            <div class="text button" onclick="stop_game();">End game</div>
-            <div class="text button" onclick="restart();">Restart game</div>
-        </div>
-        <br />
-        <p>
-            <span id="info">Type the answers to the questions.<br />If you would like to skip a question, press Enter.<br />Once the game is over, if you would like to restart, press Enter.<br />If you want to end the game at any point, press Escape.</span>
-        </p>
-        <script src="tt_blocks.js"></script>
-    </body>
+  <head>
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" href="blocks.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Times Tables Race
+    </title>
+  </head>
+  <body>
+    <h1>Times Tables!</h1>
+    <div class="answers" id="cont">
+      <h2 id="tt">
+        <span id="a">0</span> &times; <span id="b">0</span>
+      </h2>
+      <div class="text answer" id="one"></div>
+      <div class="text answer" id="two"></div>
+      <div class="text answer" id="three"></div>
+      <div class="text answer" id="four"></div>
+    </div>
+    <h2>
+      <span id="gratz"></span> <br />
+      <span id="wrong"></span>
+    </h2>
+    <div class="buttons">
+      <div class="text button" onclick="count++;reset();">Skip question</div>
+      <div class="text button" onclick="stop_game();">End game</div>
+      <div class="text button" onclick="restart();">Restart game</div>
+    </div>
+    <br />
+    <p>
+      <span id="info">Type the answers to the questions.<br />If you would like to skip a question, press Enter.<br />Once the game is over, if you would like to restart, press Enter.<br />If you want to end the game at any point, press Escape.</span>
+    </p>
+    <script src="tt_blocks.js"></script>
+  </body>
 </html>
