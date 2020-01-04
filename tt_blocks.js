@@ -16,12 +16,12 @@ var game_interval = setInterval(game_timer, 20);
 var htmls = [html_ans1, html_ans2, html_ans3, html_ans4];
 
 const MAX_TABLE = get_url_variable("max") || get_url_variable("tables") || 12;
+const TIME_LIMIT = get_url_variable("limit") || get_url_variable("time") || 150; /* game length in seconds */
 
 var a=0, b=0;
 var count = 0; /* the number of questions attempted */
 var score = 0; 
 var time = Date.now();
-var limit = 150; /* game length in seconds */
 var old_a = 0, old_b = 0;
 var play = true;
 
@@ -56,7 +56,7 @@ function game_timer() {
     if (play) {
         timer();
     }
-    if (Date.now() - time > (limit * 1000)) {
+    if (Date.now() - time > (TIME_LIMIT * 1000)) {
         stop_game();
     }
 }

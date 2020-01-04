@@ -9,11 +9,15 @@ var html_info = document.getElementById("info");
 var original = "<span id=\"a\">0</span> &times; <span id=\"b\">0</span> = <span id=\"c\"></span>";
 var game_interval = setInterval(game_timer, 20);
 
-var a=0, b=0, c, score=0, time=Date.now(), limit=150, count = 0;
-var old_a=0, old_b=0;
-var play = true;
-
 const MAX_TABLE = get_url_variable("max") || get_url_variable("tables") || 12;
+const TIME_LIMIT = get_url_variable("limit") || get_url_variable("time") || 150; /* game length in seconds */
+
+var a=0, b=0, c;
+var count = 0; /* the number of questions attempted */
+var score = 0; 
+var time = Date.now();
+var old_a = 0, old_b = 0;
+var play = true;
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
