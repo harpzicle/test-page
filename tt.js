@@ -13,10 +13,24 @@ var a=0, b=0, c, score=0, time=Date.now(), limit=150, count = 0;
 var old_a=0, old_b=0;
 var play = true;
 
-const MAX_TABLE = 12;
+const MAX_TABLE = get_url_variable("max") || get_url_variable("tables") || 12;
 
 function random(min, max) {
   return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+
+/* https://css-tricks.com/snippets/javascript/get-url-variables/
+ * variables from url (?var=xyz etc)
+ */
+function get_url_variable(variable) {
+    var vars = location.search.substring(1).split("&");
+    for (let i=0; i < vars.length; i++) {
+        let pair = vars[i].split("=");
+        if (pair[0] == variable) {
+            return pair[1];
+        }
+    }
+    return false;
 }
 
 function pair_equal(a,b,c,d) {
