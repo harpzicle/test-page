@@ -79,12 +79,14 @@ function restart() {
     time=Date.now();
     html_tt.style.display = "block";
     html_cont.style.display = "grid";
+    document.getElementsByClassName("button")[2].style.display = "none";
 }
 
 function stop_game() {
     if (!play) return;
     html_tt.style.display = "none";
     html_cont.style.display = "none";
+    setTimeout(()=>{document.getElementsByClassName("button")[2].style.display = "block";}, 1500);
     play = false;
 }
 
@@ -159,4 +161,4 @@ document.onkeydown = function(e) {
     }
 }
 
-reset();
+restart();
