@@ -2,7 +2,7 @@
     font-family: "Myriad Pro";
     font-style: normal;
     font-weight: 400;
-    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'), url(https://mriklojn.github.io/test-page/Myriad%20Pro%20Regular.ttf) format('ttf');
+    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'), url(https://mriklojn.github.io/test-page/Myriad Pro Regular.ttf) format('ttf');
 }
 
 :root {
@@ -48,7 +48,7 @@ h1 {
     width: minmax(5rem, 100%);
     font-size: 1rem;
     padding: 1rem;
-    border-radius: 5px;
+    border-radius: 0.5rem;
     overflow: hidden;
     resize: none;
     display: table-cell;
