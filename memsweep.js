@@ -98,8 +98,10 @@ function end_game() {
     else {
         just_won = false;
         blocks--;
-        (WIDTH > HEIGHT) ? WIDTH-- : HEIGHT--;
-        enlarged = false;
+        if (enlarged) {
+            (WIDTH > HEIGHT) ? WIDTH-- : HEIGHT--;
+            enlarged = false;
+        }
     }
     set_active(false);
     if (wins > 0 && wins % 3 == 0 && just_won) {
