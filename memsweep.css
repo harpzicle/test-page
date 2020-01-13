@@ -1,0 +1,35 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30%;
+  border: 0px solid #444;
+  background-color: #000;
+  border-collapse: collapse;
+}
+
+td {
+  font-family: "Source Code Pro", "Courier New", Courier, monospace;
+  font-size: 2rem;
+  text-align: center;
+  border: 3px solid #444;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+}
+
+.button {
+  text-align: center;
+  font-size: 2rem;
+  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+.info {
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 1rem 2rem;
+  font-size: 30pt;
+  font-weight: 700;
+  text-align: right;
+}
