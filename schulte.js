@@ -7,24 +7,12 @@ function shuffle(array) {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-/* https://css-tricks.com/snippets/javascript/get-url-variables/
- * variables from url (?var=xyz etc)
- */
-function get_url_variable(variable) {
-    var vars = location.search.substring(1).split("&");
-    for (let i=0; i < vars.length; i++) {
-        let pair = vars[i].split("=");
-        if (pair[0] == variable) {
-            return pair[1];
-        }
-    }
-    return false;
-}
 
+var url_params = new URLSearchParams(location.search);
 var html_table = document.getElementsByTagName("TABLE")[0];
 
-const HEIGHT = get_url_variable("height") || get_url_variable("h") || 5;
-const WIDTH = get_url_variable("width") || get_url_variable("w") || 5;
+const HEIGHT = url_params.get("height") || url_params.get("h") || 5;
+const WIDTH = url_params.get("width") || url_params.get("w") || 5;
 
 var insert = "";
 for (let i = 0; i < HEIGHT; i++) {
