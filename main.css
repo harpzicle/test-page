@@ -1,91 +1,91 @@
 @font-face {
-    font-family: "Myriad Pro";
-    font-style: normal;
-    font-weight: 400;
-    src: local('Myriad Pro Regular'), local('MyriadPro-Regular'), url(https://mriklojn.github.io/test-page/Myriad Pro Regular.ttf) format('ttf');
+  font-family: "Myriad Pro";
+  font-style: normal;
+  font-weight: 400;
+  src: local('Myriad Pro Regular'), local('MyriadPro-Regular'), url(https://mriklojn.github.io/test-page/Myriad Pro Regular.ttf) format('ttf');
 }
 
 :root {
-    --bg-color-main: #000;
-    --border-focus: 3px solid #cce;
-    --border-main: 3px solid #444;
-    --monospace: "Source Code Pro", "Courier New", "Courier", monospace;
-    --sans-serif: "Myriad Pro", "Helvetica", "Arial", sans-serif;
-    --text-color: #ddd;
+  --bg-color-main: #000;
+  --border-focus: 3px solid #cce;
+  --border-main: 3px solid #444;
+  --monospace: "Source Code Pro", "Courier New", "Courier", monospace;
+  --sans-serif: "Myriad Pro", "Helvetica", "Arial", sans-serif;
+  --text-color: #ddd;
 }
 
 .reg-output {
-    display: grid;
-    grid-gap: 5%;
-    grid-template-columns: 47.5% 47.5%;
-    grid-template-rows: 6rem;
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 47.5% 47.5%;
+  grid-template-rows: 6rem;
 }
 
 body {
-    background-color: var(--bg-color-main); 
-    color: var(--text-color);
-    font-family: var(--sans-serif);
+  background-color: var(--bg-color-main); 
+  color: var(--text-color);
+  font-family: var(--sans-serif);
 }
 
 h1, h2 {
-    color: #fff;
+  color: #fff;
 }
 
 h2 {
-    font-size: 24pt;
+  font-size: 24pt;
 }
 
 h1 {
-    font-size: 30pt;
+  font-size: 30pt;
 }
 
 .text, hr {
-    border: var(--border-main);
-    background-color: var(--bg-color-main);
+  border: var(--border-main);
+  background-color: var(--bg-color-main);
 }
 
 .text, button {
-    background-color: var(--bg-color-main);
-    border-radius: 0.5rem;
-    font-family: var(--monospace);
-    font-size: 2rem;
-    min-width: 5rem;
-    outline: none;
-    overflow: hidden;
-    padding: 1rem;
-    resize: none;
-    transition: 0.75s;
-    vertical-align: middle;
-    white-space: pre-wrap;
+  background-color: var(--bg-color-main);
+  border-radius: 0.5rem;
+  font-family: var(--monospace);
+  font-size: 2rem;
+  min-width: 5rem;
+  outline: none;
+  overflow: hidden;
+  padding: 1rem;
+  resize: none;
+  transition: 0.75s;
+  vertical-align: middle;
+  white-space: pre-wrap;
 }
 
 .text:focus {
-    border: var(--border-focus);
+  border: var(--border-focus);
 }
 
 .reg-output * {
-    display: block;
-    height: 100%;
-    margin: auto;
-    width: 100%;
+  display: block;
+  height: 100%;
+  margin: auto;
+  width: 100%;
 }
 
 hr {
-    margin-bottom: 0.75rem;
-    margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  margin-top: 0.75rem;
 }
 
 a:link, a:visited {
-    color: var(--text-color);
-    text-decoration: none;
+  color: var(--text-color);
+  text-decoration: none;
 }
 
 button {
-    border: var(--border-main);
-    color: var(--text-color);
-    font-family: var(--sans-serif);
+  border: var(--border-main);
+  color: var(--text-color);
+  font-family: var(--sans-serif);
 }
 
 button:active {
-    background-color: #222;
+  background-color: #222;
 }

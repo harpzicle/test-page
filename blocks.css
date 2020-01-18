@@ -1,29 +1,29 @@
 .answers { /* container */
   display: grid;
-  text-align: center;
-  grid-template-columns: repeat(2, minmax(10rem, 50%));
-  grid-gap: 1rem;
   grid-auto-rows: minmax(20px, auto);
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, minmax(10rem, 50%));
+  text-align: center;
 }
 .answer { /* inner */
   display: block;
-  line-height: 4rem;
   font-size: 4rem;
+  line-height: 4rem;
 }
 .buttons { /* container */
   display: flex;
   grid-gap: 1rem;
 }
 .button { /* inner */
-  width: 50%;
   font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
   font-size: 1.5rem;
   text-align: center;
+  width: 50%;
 }
 #tt {
   font-size: 5rem;
-  text-align: center;
-  line-height: 0rem;
   grid-column: 1 / span 2;
   grid-row: 0;
+  line-height: 0rem;
+  text-align: center;
 }

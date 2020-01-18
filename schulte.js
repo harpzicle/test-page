@@ -8,13 +8,16 @@ function shuffle(array) {
     }
 }
 
-var url_params = new URLSearchParams(location.search);
+var current = 1;
 var html_table = document.getElementsByTagName("TABLE")[0];
+var insert = "";
+var list = Array(WIDTH*HEIGHT);
+var start_time, end_time;
+var url_params = new URLSearchParams(location.search);
 
 const HEIGHT = url_params.get("height") || url_params.get("h") || 5;
 const WIDTH = url_params.get("width") || url_params.get("w") || 5;
 
-var insert = "";
 for (let i = 0; i < HEIGHT; i++) {
     insert += "<tr>";
     for (let j = 1; j <= WIDTH; j++) {
@@ -24,10 +27,6 @@ for (let i = 0; i < HEIGHT; i++) {
     insert += "</tr>";
 } /* generate table */
 html_table.innerHTML = insert;
-
-var current = 1;
-var start_time, end_time;
-var list = Array(WIDTH*HEIGHT);
 
 for (let i=1; i <= WIDTH*HEIGHT; i++) {
     list[i-1] = i;
@@ -40,8 +39,8 @@ function reset_game() {
         document.getElementById(i).innerHTML = list[i-1];
     }
     html_table.style.display = "table";
-    document.getElementById("restart").style.display = "none";
     document.getElementById("gratz").innerHTML = '';
+    document.getElementById("restart").style.display = "none";
 }
 
 function flash_color(elem, color, time) {
