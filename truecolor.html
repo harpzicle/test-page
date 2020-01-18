@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>
+      True Color
+    </title>
+    <link rel="stylesheet" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="truecolor.css" />
+  </head>
+  <body>
+    <table id="question">
+      <tr>
+        <td class="visual" id="prompt">
+          COLOR NAME
+        </td>
+      </tr>
+      <tr>
+        <td class="visual" id="test">
+          COLORED WORD
+        </td>
+      </tr>
+    </table>
+    <div id="answer">
+      <button onclick="process(0);">No</button>
+      <button onclick="process(1);">Yes</button>
+      <div class="score">Score: <span id="score">0</span></div>
+    </div>
+    <script src="truecolor.js"></script>
+  </body>
+</html>

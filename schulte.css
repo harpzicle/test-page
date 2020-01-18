@@ -1,20 +1,21 @@
 table {
+  border-collapse: collapse;
+  border: 3px solid #444;
   table-layout: fixed;
   width: 100%;
-  border: 3px solid #444;
-  border-collapse: collapse;
 }
 
 td {
-  font-family: "Source Code Pro", "Courier New", Courier, monospace;
+  border: 3px solid #444;
+  font-family: var(--monospace);
   font-size: 3rem;
   text-align: center;
-  border: 3px solid #444;
 }
 
-.button {
-  text-align: center;
-  font-size: 2rem;
-  font-family: "Myriad Pro", Helvetica, Arial, sans-serif;
+button {
+  font-family: var(--sans-serif);
+  font-size: 2em;
   font-weight: 700;
+  padding: 1rem;
+  text-align: center;
 }

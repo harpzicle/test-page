@@ -1,0 +1,35 @@
+#answer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+table {
+    border-spacing: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.visual {
+    background-color: #fff;
+    border-radius: 1rem;
+    color: black;
+    font-size: 4em;
+    font-weight: 700;
+    letter-spacing: 0em;
+    padding: 2rem;
+    text-align: center;
+}
+
+.score {
+    font-size: 2em;
+    font-weight: 700;
+    grid-column: 1 / span 2;
+    padding: 1em;
+    text-align: right;
+}
+
+button {
+    font-weight: 700;
+    margin: 1rem;
+    transition: 0.1s;
+}

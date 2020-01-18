@@ -1,24 +1,24 @@
 table {
-  margin-left: auto;
-  margin-right: auto;
-  border: 0px solid #444;
   background-color: #000;
   border-collapse: collapse;
+  border: 0px solid #444;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 td {
-  font-family: "Source Code Pro", "Courier New", Courier, monospace;
-  font-size: 2em;
-  text-align: center;
   border: 3px solid #444;
-  padding: 0;
-  width: 2em;
+  font-family: var(--monospace);
+  font-size: 2em;
   height: 2em;
+  padding: 0;
+  text-align: center;
+  width: 2em;
 }
 
 .info {
-  padding: 1rem 2rem 2rem;
   font-size: 2em;
   font-weight: 700;
+  padding: 1rem 2rem 2rem;
   text-align: right;
 }
