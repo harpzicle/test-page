@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="units.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="units.js" defer ></script>
+    <title>Wacky Units</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="units">
+        <div class="second define">
+          1 second is 
+            <input type="numeric" size="10" class="old second" value="9192631770" />
+          periods of the hyperfine transition of the <sup>133</sup>Cs atom, in ground state at zero temperature.
+        </div>
+        <div class="metre define">
+          1 metre is 1 part in 
+            <input type="numeric" size="9" class="old metre" value="299792458" />
+          of the path travelled by light in a vacuum in 1 second.
+        </div>
+        <div class="kilogram define">
+          1 kilogram fixes the value of the Planck constant to be 
+            <span style="white-space: nowrap;"><input type="numeric" size="10" class="old kilogram-mantissa" value="6.62607015">
+            &times;10
+            <sup><input type="numeric" size="2" class="old kilogram-exponent" value="-34"></sup></span>
+          joule-second.
+        </div>
+      </div>
+      <div class="answers">
+        <div class="second depend">
+          1 new second is <span class="new second">1</span> old second.
+        </div>
+        <div class="metre depend">
+          1 new metre is <span class="new metre">1</span> old metre.
+        </div>
+        <div class="kilogram depend">
+          1 new kilogram is <span class="new kilogram">1</span> old kilogram.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<script type="text/javascript">
+  document.querySelectorAll("[type='numeric']")
+    .forEach(n => n.addEventListener("input", (event)=>{event.target.value = event.target.value.replace(/[^0-9.-]/g, '')}));
+</script>

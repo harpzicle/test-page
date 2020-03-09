@@ -25,6 +25,7 @@ body {
   background-color: var(--bg-color-main); 
   color: var(--text-color);
   font-family: var(--sans-serif);
+  font-size: 14pt;
 }
 
 h1, h2 {
@@ -37,6 +38,10 @@ h2 {
 
 h1 {
   font-size: 30pt;
+}
+
+summary > h2 {
+  display: inline;
 }
 
 .text, hr {
@@ -76,8 +81,8 @@ hr {
 }
 
 a:link, a:visited {
-  color: var(--text-color);
-  text-decoration: none;
+  color: #ff7000;
+  text-decoration: underline;
 }
 
 button {
@@ -87,5 +92,37 @@ button {
 }
 
 button:active {
+  background-color: #222;
+}
+
+button:focus {
+  border: var(--border-focus);
+}
+
+button::-moz-focus-inner {
+  outline: 0;
+}
+
+input {
+  color: var(--text-color);
+}
+
+nav > a {
+  padding: 16px 32px;
+  outline: 0;
+  margin: 0;
+  border: 0;
+  font-size: 166%;
+  background-color: #222;
+  display: block;
+  width: 1fr;
+}
+
+nav > a:link, nav > a:visited {
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
   background-color: #222;
 }

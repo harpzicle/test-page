@@ -1,0 +1,16 @@
+input[type="numeric"] {
+    color: var(--text-color);
+    background-color: var(--bg-color-main);
+    font-family: var(--sans-serif);
+    font-size: 14pt;
+    padding: 3px;
+    border: 0;
+    border-bottom: 1px dashed #ccc;
+    margin-left: 3px;
+    margin-right: 3px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}

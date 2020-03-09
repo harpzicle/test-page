@@ -8,15 +8,18 @@ function shuffle(array) {
     }
 }
 
+
+var url_params = new URLSearchParams(location.search);
+const HEIGHT = url_params.get("height") || url_params.get("h") || 5;
+const WIDTH = url_params.get("width") || url_params.get("w") || 5;
+
 var current = 1;
 var html_table = document.getElementsByTagName("TABLE")[0];
 var insert = "";
 var list = Array(WIDTH*HEIGHT);
 var start_time, end_time;
-var url_params = new URLSearchParams(location.search);
 
-const HEIGHT = url_params.get("height") || url_params.get("h") || 5;
-const WIDTH = url_params.get("width") || url_params.get("w") || 5;
+
 
 for (let i = 0; i < HEIGHT; i++) {
     insert += "<tr>";

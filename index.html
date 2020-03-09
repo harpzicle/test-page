@@ -11,45 +11,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
+    <nav>
+      <a href="countdown.html">Countdown</a>
+      <a href="clock.html">Clock</a>
+      <a href="memsweep.html">Memory Sweep</a>
+      <a href="schulte.html">Schulte Table</a>
+      <a href="truecolor.html">True Color</a>
+      <a href="tt_blocks.html">Times Tables</a>
+    </nav>
     <h1>
       Welcome to my channel.
     </h1>
     <hr />
-    <h2>
-      Clock
-    </h2>
-    <p>
-      <a href="clock.html">
-        Click here to be transported to the pixel clock
-      </a>
-    </p>
+    <details name="clock">
+      <summary>
+        <h2>
+          Clock
+        </h2>
+      </summary>
+      <iframe src='clock.html' style="border:0;" width="400" height="400" title="Clock visual">
+        <a href="clock.html"> Click here to go to the clock </a>
+      </iframe>
+    </details>
     <hr />
-    <h2>
-      Zero-width Spacing
-    </h2>
-    <p>
-      Click here if you want to mention everyone without doing it for real:
-    </p>
-    <div class="text" onclick="copy(this)">@&#8203;everyone</div>
-    <p>
-      Click here if you just want a zero-width space:
-    </p>
-    <div class="text" onclick="copy(this)" readonly="true">&#8203</div>
+    <details name="zw-spacing">
+      <summary>
+        <h2>
+          Zero-width Spacing
+        </h2>
+      </summary>
+      <p>
+        Click here if you want to mention everyone without doing it for real:
+      </p>
+      <div class="text" onclick="copy(this)" tabindex="0">@&#8203;everyone</div>
+      <p>
+        Click here if you just want a zero-width space:
+      </p>
+      <div class="text" onclick="copy(this)" tabindex="0">&#8203</div>
+    </details>
     <hr />
-    <h2>
-      Regional Indicators
-    </h2>
-    <p>
-      Write text in here to get regional indicators.
-    </p>
-    <input class="text" type="text" id="reg-input" oninput="regional()"></input>
-    <p>
-      Click these to copy them.
-    </p>
-    <div class="reg-output">
-      <div class="text regional" id="reg-output-big" onclick="copy(this)"></div>
-      <div class="text regional" id="reg-output-small" onclick="copy(this)" readonly="true"></div>
-    </div>
+    <details name="reg-indicators">
+      <summary>
+        <h2>
+          Regional Indicators
+        </h2>
+      </summary>      
+      <p>
+        Write text in here to get regional indicators.
+      </p>
+      <input class="text" type="text" id="reg-input" oninput="regional()"></input>
+      <p>
+        Click these to copy them.
+      </p>
+      <div class="reg-output">
+        <div class="text regional" id="reg-output-big" onclick="copy(this)"></div>
+        <div class="text regional" id="reg-output-small" onclick="copy(this)" readonly="true"></div>
+      </div>
+    </details>  
     <hr />
   </body>
 </html>

@@ -41,7 +41,14 @@ var score = 0;
 var wins = 0;
 var just_won = false;
 var enlarged = false;
+var multiplier = 1;
+var sub_multiplier = 0;
 var MEMORY_TIME = 2000;
+const SUB_PER_MULT = 3;
+const ACTIVE = "linear-gradient(160deg, #07c, #07f)";
+const INACTIVE = "";
+const CORRECT = "linear-gradient(160deg, #2c2, #1f3)";
+const WRONG = "linear-gradient(160deg, #c11, #f30)";
 
 function play() {
     create_table(WIDTH, HEIGHT);
@@ -55,11 +62,9 @@ function play() {
     selected = selected.slice(0, blocks);
     set_active(false);
     for (const i of selected) {
-        var cell = document.getElementById(i);
-        cell.style.backgroundImage = "linear-gradient(160deg, #07c, #07f)";
+        document.getElementById(i).style.backgroundImage = ACTIVE;
         setTimeout(() => {
-            var cell = document.getElementById(i);
-            cell.style.backgroundImage = ""; 
+           document.getElementById(i).style.backgroundImage = INACTIVE;
         }, MEMORY_TIME);
     }
     setTimeout(() => {set_active(true);}, MEMORY_TIME);
@@ -71,14 +76,16 @@ function process(elem) {
     const idx = selected.indexOf(id);
     if (idx != -1) {
         selected.splice(idx, 1);
-        elem.style.backgroundImage = "linear-gradient(160deg, #2c2, #1f3)";
+        elem.style.backgroundImage = CORRECT;
         lives--;
-        score += 100;
+        score += multiplier * 100;
     }
     else {
         elem.innerHTML = "&times;";
-        elem.style.backgroundImage = "linear-gradient(160deg, #c11, #f30)";
+        elem.style.backgroundImage = WRONG;
         lives--;
+        multiplier = 1;
+        sub_multiplier = 0;
         wrong++;
     }
     elem.active = false;
@@ -88,8 +95,13 @@ function process(elem) {
 function end_game() {
     if (wrong == 0) {
         var bonus = blocks * blocks * 30;
-        bonus = 50 * (bonus/50).toFixed(); /* round to 50 */;
-        score += bonus;
+        bonus = 50 * (bonus/50).toFixed(); /* round to 50 */
+        sub_multiplier++;
+        if (sub_multiplier == SUB_PER_MULT) {
+            sub_multiplier = 0;
+            multiplier++;
+        }
+        score += bonus * multiplier;
         wins++;
         blocks++;
         just_won = true;
@@ -98,6 +110,8 @@ function end_game() {
     else {
         just_won = false;
         blocks--;
+        sub_multiplier = 0;
+        multiplier = 1;
         if (enlarged) {
             (WIDTH > HEIGHT) ? WIDTH-- : HEIGHT--;
             enlarged = false;
@@ -109,8 +123,7 @@ function end_game() {
         enlarged = true;
     }
     for (const i of selected) {
-        var cell = document.getElementById(i);
-        cell.style.backgroundImage = "linear-gradient(160deg, #07c, #07f)";
+        document.getElementById(i).style.backgroundImage = ACTIVE;
     }
     setTimeout(play, 1000);
 }
@@ -118,8 +131,16 @@ function end_game() {
 var html_lives = document.getElementById("lives");
 var html_score = document.getElementById("score");
 setInterval(() => {
-    html_lives.innerText = lives;
-    html_score.innerText = score;
+    document.getElementById("score").innerText = lives;
+    document.getElementById("lives").innerText = score;
+    document.getElementById("mul").innerText = multiplier;
+    document.getElementById("submul").innerHTML = 
+'<svg width="28" height="24">\
+    <circle cx="12" cy="12" r="11" stroke="orange" stroke-width="2">\
+</svg>'.repeat(SUB_PER_MULT - sub_multiplier) + 
+'<svg width="28" height="24">\
+  <circle cx="12" cy="12" r="12" stroke="orange" stroke-width="0" fill="orange"/>\
+</svg>'.repeat(sub_multiplier);
 }, 100);
 
 play();
