@@ -2,7 +2,7 @@ input[type="numeric"] {
     color: var(--text-color);
     background-color: var(--bg-color-main);
     font-family: var(--sans-serif);
-    font-size: 14pt;
+    font-size: inherit;
     padding: 3px;
     border: 0;
     border-bottom: 1px dashed #ccc;
@@ -12,5 +12,44 @@ input[type="numeric"] {
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    box-sizing: border-box;
+    grid-template-columns: 50% 50%;
+    grid-gap: 1em;
+    margin: 0.5em;
+}
+
+.define {
+    grid-column: 1;
+}
+
+.depend {
+    grid-column: 2;
+}
+
+.define, .depend {
+    display: table-cell;
+    vertical-align: top;
+    grid-template-rows: repeat(7, 80px);
+}
+
+.second {
+    grid-row: 1;
+}
+.metre {
+    grid-row: 2;
+}
+.kilogram {
+    grid-row: 3;
+}
+.ampere {
+    grid-row: 4;
+}
+.kelvin {
+    grid-row: 5;
+}
+.mole {
+    grid-row: 6;
+}
+.candela {
+    grid-row: 7;
 }

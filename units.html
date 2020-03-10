@@ -5,46 +5,89 @@
     <link rel="stylesheet" type="text/css" href="main.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="units.js" defer ></script>
+    <script src="units.js" defer></script>
     <title>Wacky Units</title>
   </head>
   <body>
     <div class="container">
-      <div class="units">
-        <div class="second define">
-          1 second is 
-            <input type="numeric" size="10" class="old second" value="9192631770" />
-          periods of the hyperfine transition of the <sup>133</sup>Cs atom, in ground state at zero temperature.
-        </div>
-        <div class="metre define">
-          1 metre is 1 part in 
-            <input type="numeric" size="9" class="old metre" value="299792458" />
-          of the path travelled by light in a vacuum in 1 second.
-        </div>
-        <div class="kilogram define">
-          1 kilogram fixes the value of the Planck constant to be 
-            <span style="white-space: nowrap;"><input type="numeric" size="10" class="old kilogram-mantissa" value="6.62607015">
-            &times;10
-            <sup><input type="numeric" size="2" class="old kilogram-exponent" value="-34"></sup></span>
-          joule-second.
-        </div>
+      <div class="second define">
+        1 second fixes the value of the ground-state hyperfine transition frequency of the <sup>133</sup>Cs atom to be
+          <input type="numeric" size="10" class="old second" value="9192631770" />
+        hertz.
       </div>
-      <div class="answers">
-        <div class="second depend">
-          1 new second is <span class="new second">1</span> old second.
-        </div>
-        <div class="metre depend">
-          1 new metre is <span class="new metre">1</span> old metre.
-        </div>
-        <div class="kilogram depend">
-          1 new kilogram is <span class="new kilogram">1</span> old kilogram.
-        </div>
+      <div class="metre define">
+        1 metre fixes the value of the speed of light to be
+          <input type="numeric" size="9" class="old metre" value="299792458" />
+        metre per second
+      </div>
+      <div class="kilogram define">
+        1 kilogram fixes the value of the Planck constant to be 
+          <span style="white-space: nowrap;">
+            <input type="numeric" size="8" class="old kilogram-mantissa" value="6.62607015" />
+            &times;10
+            <sup>
+              <input type="numeric" size="2" class="old kilogram-exponent" value="-34" />
+            </sup>
+          </span>
+        joule-second.
+      </div>
+      <div class="ampere define">
+        1 ampere fixes the value of the elementary charge to be 
+          <span style="white-space: nowrap;">
+            <input type="numeric" size="9" class="old ampere-mantissa" value="1.602176634" />
+            &times;10
+            <sup>
+              <input type="numeric" size="2" class="old ampere-exponent" value="-19">
+            </sup>
+          </span>
+        ampere-second.
+      </div>
+      <div class="kelvin define">
+        1 kelvin fixes the value of the Boltzmann constant to be 
+          <span style="white-space: nowrap;">
+            <input type="numeric" size="6" class="old kelvin-mantissa" value="1.380649" />
+            &times;10
+            <sup>
+              <input type="numeric" size="2" class="old kelvin-exponent" value="-23">
+            </sup>
+          </span>
+        joule per kelvin.
+      </div>
+      <div class="mole define">
+        1 mole fixes the value of the Avogadro constant to be
+          <span style="white-space: nowrap;">
+            <input type="numeric" size="8" class="old mole-mantissa" value="6.02214076" />
+            &times;10
+            <sup>
+              <input type="numeric" size="1" class="old mole-exponent" value="23">
+            </sup>
+          </span>
+        per mole.
+      </div>
+      <div class="candela define">
+        1 candela fixes the luminous efficacy of monochromatic radiation of frequency 540&times;10<sup>12</sup> Hz to be <input type="numeric" size="2" class="old candela" value="683" /> candela-steradian per watt.
+      </div>
+      <div class="second depend">
+        1 new second is <span class="new second">1.000</span> old second.
+      </div>
+      <div class="metre depend">
+        1 new metre is <span class="new metre">1.000</span> old metre.
+      </div>
+      <div class="kilogram depend">
+        1 new kilogram is <span class="new kilogram">1.000</span> old kilogram.
+      </div>
+      <div class="ampere depend">
+        1 new ampere is <span class="new ampere">1.000</span> old ampere.
+      </div>
+      <div class="kelvin depend">
+        1 new kelvin is <span class="new kelvin">1.000</span> old kelvin.
+      </div>
+      <div class="mole depend">
+        1 new mole is <span class="new mole">1.000</span> old mole.
+      </div>
+      <div class="candela depend">
+        1 new candela is <span class="new candela">1.000</span> old candela.
       </div>
     </div>
   </body>
 </html>
-
-<script type="text/javascript">
-  document.querySelectorAll("[type='numeric']")
-    .forEach(n => n.addEventListener("input", (event)=>{event.target.value = event.target.value.replace(/[^0-9.-]/g, '')}));
-</script>
