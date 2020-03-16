@@ -16,6 +16,7 @@ var game_interval = setInterval(game_timer, 20);
 var htmls = [html_ans1, html_ans2, html_ans3, html_ans4];
 
 const MAX_TABLE = get_url_variable("max") || get_url_variable("tables") || 12;
+const MIN_TABLE = get_url_variable("min") || get_url_variable("min_table") || 2;
 const TIME_LIMIT = get_url_variable("limit") || get_url_variable("time") || 150; /* game length in seconds */
 
 var a=0, b=0;
@@ -63,8 +64,8 @@ function game_timer() {
 
 function reset() {
     while (pair_equal(old_a, old_b, a, b)) {
-        a = random(2, MAX_TABLE);
-        b = random(2, MAX_TABLE);
+        a = random(MIN_TABLE, MAX_TABLE);
+        b = random(MIN_TABLE, MAX_TABLE);
     }
     old_a = a;
     old_b = b;
