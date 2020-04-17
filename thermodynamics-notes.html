@@ -1,0 +1,353 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><style>@import url("./markdown.css");</style><script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML'></script><style>/*GitHub*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
+</style><title>thermodynamics-notes</title></head><body><article class="markdown-body"><script type="text/javascript">
+window.MathJax.Hub.Config({
+  config: ["MMLorHTML.js"],
+  extensions: ["tex2jax.js", "configMacros.js"],
+  jax: ["input/TeX"],
+  tex2jax: {
+    inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+    displayMath: [ ['$$','$$'], ["\\[","\\]"] ],
+    processEscapes: false,
+    processEnvironments: true,
+  },
+  TeX: {
+    extensions: ["AMSmath.js", "AMSsymbols.js"],
+    TagSide: "right",
+    TagIndent: "0em",
+    Macros: {
+        dd: '{\\mathrm d}',
+        mean: '\\overline',
+        d: '\\mathrm{\\delta}',
+        drv: ["\\frac{\\dd #2}{\\dd #1}", 2, "t"],
+        def: "\\mathrel{\\overset{\\tiny{\\mbox{def}}}{=}}",
+        brack: ["\\left(#1\\right)", 1],
+        vct: ["\\vec{\\mathbf{#1}}", 1],
+        dbar: "{\\dd \\mkern -8mu ¯ \\mkern -1mu}",
+        pdrv: ["\\frac{\\partial #1}{\\partial #2}", 2]
+    },
+    MultLineWidth: "85%",
+    equationNumbers: {
+      autoNumber: "AMS",
+    },
+    unicode: {fonts: "STIXGeneral,'Arial Unicode MS'"}
+  },
+  "HTML-CSS": {
+    scale: 1.3
+  },
+  showProcessingMessages: false
+});
+</script>
+
+<h1 id="probability">Probability<a class="headerlink" href="#probability" title="Permanent link"></a></h1>
+<ul>
+<li>consider observation on a system $S$</li>
+<li>many possible outcomes</li>
+<li>$S$ is a member of large set $\Sigma$ of systems<ul>
+<li>$\Sigma$ is an <strong>ensemble</strong></li>
+<li>has $\Omega(\Sigma)$ total systems</li>
+</ul>
+</li>
+<li>probability of $X$ happening is $\lim_\limits{\Omega(\Sigma)\to\infty}\frac{\Omega(X)}{\Omega(\Sigma)}$ so probability must be between 0 and 1</li>
+<li>say there are $M$ distinct outcomes of an observation on $S$, then $\sum\limits_{i=1}^MP(X_i)\equiv1$<ul>
+<li>this is called the <strong>normalisation condition</strong></li>
+<li>equivalent to obvious statement that an observation results in at least one of its possible outcomes</li>
+</ul>
+</li>
+</ul>
+<h2 id="combinatorics">Combinatorics<a class="headerlink" href="#combinatorics" title="Permanent link"></a></h2>
+<ul>
+<li>number of ways of arranging $N$ distinguishable objects $C^N=N!$</li>
+<li>arranging $n_1$ <em>indistinguishable</em> objects and $N-n_1$ <em>distinguishable</em> objects is $\frac{N!}{n_1!}$</li>
+<li>arranging $N$ objects into 2 groups, one with $n_1$ indistinguishable objects is therefore $\frac{N!}{n_1!(N-n_1)!}$</li>
+</ul>
+<h2 id="mean-variance-std-dev">Mean, variance, std dev<a class="headerlink" href="#mean-variance-std-dev" title="Permanent link"></a></h2>
+<ul>
+<li>for a variable $u$ which can take $M$ different values $u_i$, the mean value $\mean u\def\sum\limits_{i=1}^MP(u_i)u_i$</li>
+<li>for a binomial, $P(n)=\frac{N!}{n!(N-n)!}p^nq^{N-n}$, so the mean $\mean{n}=\sum\limits_{n=0}^N\frac{N!}{n!(N-n)!}p^nq^{N-n}n$</li>
+<li>this is horrible - take advantage of $np^n \equiv p\drv[p]{}p^n$</li>
+<li>so it follows:
+\[
+\begin{align*}
+\mean{n} &amp;= \sum\limits_{n=0}^N \frac{N!}{n!(N-n)!}p^nq^{N-n}n\\
+             &amp;= \sum\limits_{n=0}^N \frac{N!}{n!(N-n)!}q^{N-n}p\drv[p]{}p^n\\
+             &amp;= p\drv[p]{}\brack{\sum\limits_{i=0}^N \frac{N!}{n!(N-n)!}p^nq^{N-n}}\\
+             &amp;= p\drv[p]{}(p+q)^N\\
+             &amp;= p N(p+q)^{N-1}\\
+\mean{n} &amp;= Np
+\end{align*}
+\]</li>
+<li>variance calculation extends that trick: $n^2p^n \equiv \brack{p\drv[p]{}}^2p^n$</li>
+<li>$\text{Var}(X)=\mean{\brack{n^2}}-\brack{\mean{n}}^2 = Npq$</li>
+<li>relative width of distribution $=\frac{\sigma_X}{\mean X}=\frac{\sqrt{Npq}}{Np}=\sqrt{\frac qp}\frac 1{\sqrt N}$</li>
+</ul>
+<h2 id="gaussian-distribution">Gaussian distribution<a class="headerlink" href="#gaussian-distribution" title="Permanent link"></a></h2>
+<ul>
+<li>$P(n)$ does not change much for $N\gg1$ so we can define $\mathcal P(n)\dd n=P(n, n+\dd n)$, and $$\int\limits_{n-\frac12}^{n+\frac12}\mathcal P(n)\dd n = P(n)$$</li>
+<li>so <a name="binom-pdf-def"></a> $\mathcal P(n)\approx P(n)=\binom Nnp^nq^{N-n}$</li>
+<li>and relative width of distribution is small $\brack{\propto\frac1{\sqrt N}}$</li>
+<li>which means pdf is strongly peaked around mean</li>
+<li>Taylor expanding $\ln\mathcal P$ around the maximum at $\tilde n$<ul>
+<li>expanding log because it varies slower so Taylor expansion is more useful
+<a name="ln-pdf-taylor"></a>\[
+\ln\mathcal P(\tilde n+\eta)=\ln\mathcal P(\tilde n)+\eta B_1 + \frac12\eta^2B_2+\dots
+\]
+where <a name="taylor-coeffs"></a>$B_k=D_n^k(\ln\mathcal P)(\tilde n)$
+since $\tilde{n}$ is the maximum $B_1=0$ and $B_2&lt;0$</li>
+</ul>
+</li>
+<li>due to <a href="#binom-pdf-def">the definition</a>, <a name="ln-pdf-def"></a>$\ln\mathcal P=\ln N!-\ln n!-\ln(N-n)!+n\ln p+(N-n)\ln q$</li>
+<li>stirling approximation: $\drv[n]{\ln n!} \approx \ln n$</li>
+<li>according to <a href="#taylor-coeffs">definitions</a> again, $B_1=-\ln\tilde n+\ln(N-\tilde n)+\ln p-\ln q=0$</li>
+<li>this implies $1=\frac{(N-\tilde n)p}{q\tilde n}$</li>
+<li>therefore $(N-\tilde n)p=\tilde nq$ so $\tilde n=Np=\mean n$</li>
+<li>this is the expected result that the maximum $\ln\mathcal P$ occurs at the mean</li>
+<li>second differentiation of <a href="#ln-pdf-def">the log-pdf</a> yields $B_2=-\frac1{\tilde n}-\frac1{N-\tilde n}=-\brack{\frac1{Np}+\frac1{Nq}}=-\frac1{Npq}=-\frac1{\sigma_n^2}$</li>
+<li>so the <a href="#ln-pdf-taylor">taylor expansion</a> is
+\[
+\begin{align*}
+    \ln\mathcal P(\mean n+\eta)&amp;\approx\ln\mathcal P(\mean n)-\frac{\eta^2}{2\sigma_n^2}+\dots\\
+    \mathcal P(n)&amp;\approx\mathcal P\exp\left[-\frac{(n-\mean n)^2}{2\sigma_n^2}\right]
+\end{align*}
+\]</li>
+<li>$\mathcal P(\mean n)$ is fixed remembering normalisation condition
+\[
+\begin{align*}
+    &amp;\mathcal P(\mean n)\int\limits_{-\infty}^\infty\exp\left[-\frac{(n-\mean n)^2}{2\sigma_n^2}\right]\dd n\\
+    &amp;\mathcal P(\mean n)\sqrt2\sigma_n\int\limits_{-\infty}^\infty\exp\brack{-x^2}\dd x = 1\\
+    \implies &amp;\mathcal P(\mean n)=\frac1{\sqrt{2\pi}\sigma_n}\\
+    \implies &amp;\mathcal P(n)=\frac1{\sqrt{2\pi}\sigma_n}\exp\brack{-\frac{(n-\mean n)^2}{2\sigma_n^2}}
+\end{align*}
+\]</li>
+<li>this is the <strong>Gaussian distribution</strong></li>
+<li><strong>VERY IMPORTANT!!</strong> this was only done with simple 2-outcome system but any system becomes Gaussian in the limit as $N\to\infty$</li>
+</ul>
+<h1 id="statistical-mechanics">Statistical mechanics<a class="headerlink" href="#statistical-mechanics" title="Permanent link"></a></h1>
+<ul>
+<li>consider single spinless particle in a one-dimensional system<ul>
+<li>assume eqn of motion is known</li>
+<li>state of system is exactly known when momentum $p$ and postion $q$ are known</li>
+</ul>
+</li>
+<li>time evolution of $q$ and $p$ can be visualised by plotting $(q,p)$ in $q$-$p$ plane</li>
+<li>this is known as <strong>phase space</strong> </li>
+<li>cannot be known exactly because instrumentation</li>
+<li>chop up phase space into cells $\d q\times\d p$<ul>
+<li>respectively errors in position and momentum</li>
+</ul>
+</li>
+<li>area of each cell $\d q\d p=h_0$ </li>
+<li>now move to 3-D, 3 $q$-$p$ pairs are needed</li>
+<li>number of $q$-$p$ pairs needed to specify system is known as <strong>degrees of freedom</strong></li>
+<li>chop up phase space into cuboids of volume $h_0^3$</li>
+<li>now increase number of particles to $N$</li>
+<li>3 pairs of $q$-$p$ needed and phase space has $2f=6N$ dimensions</li>
+<li>system can be arbitrarily specified by letting $h_0\to0$</li>
+</ul>
+<h2 id="equal-a-priori-probabilities">Equal <em>a priori</em> probabilities<a class="headerlink" href="#equal-a-priori-probabilities" title="Permanent link"></a></h2>
+<ul>
+<li>usually we are talking about $\sim10^{24}$ particles </li>
+<li>knowing the eqn of state is impossible and actually useless</li>
+<li>use statistics - ensemble of many identical systems</li>
+<li>constrain system extrinsically, by energy $E$, volume $V$, number of particles $N$ etc.</li>
+<li>uncertainties in quantities $\d E\dots$</li>
+<li>how to obtain probabilities of each state?</li>
+<li>consider system in equilibrium</li>
+<li>probability of each state is independent of time (ensemble does not change)</li>
+<li>no reason for one state to be preferred over the others</li>
+<li>so assume all the accessible states of the system are equally likely</li>
+<li>this is principle of <strong>equal <em>a priori</em> probabilities</strong></li>
+</ul>
+<h2 id="h-theorem">H theorem<a class="headerlink" href="#h-theorem" title="Permanent link"></a></h2>
+<ul>
+<li>consider a nonequilibrium ensemble of systems of weakly interacting particles</li>
+<li>with no interaction, system in a state will stay in that state</li>
+<li>with interactions, systems can move to different accessible states</li>
+<li>ensemble changes over time</li>
+<li>ascribe probability $P_r(t)$ = probability of system being in state $r$ at time $t$</li>
+<li>systems can change state - $r$ can change to $s$ and vice versa</li>
+<li>states becoming $r$ occur at rate $P_sW_{sr}$ and states becoming $s$ occur at rate $P_rW_{rs}$</li>
+<li>physics is time-reversible so <a name="T-symmetry"></a>$W_{sr}=W_{rs}$</li>
+<li>$\drv{P_r}=\sum\limits_{s\neq r}P_sW_{sr}-P_rW_{rs}$</li>
+<li>using <a href="#T-symmetry">symmetry condition</a>, $\drv{P_r}=\sum\limits_sW_{rs}(P_s-P_r)$</li>
+<li>now consider $H\def\overline{\ln P_r}\equiv\sum\limits_rP_r\ln P_r$</li>
+<li>differentiating:
+\[
+\begin{align*}
+    \drv{H}&amp;=\sum\limits_r\brack{\drv{P_r}\ln{P_r}+\drv{P_r}}\\
+           &amp;=\sum\limits_r\drv{P_r}\brack{\ln{P_r}+1}\\\
+           &amp;=\sum\limits_r\sum\limits_sW_{rs}(P_s-P_r)\brack{\ln{P_r}+1}\\
+\text{swapping r and s} &amp;=\sum\limits_r\sum\limits_sW_{sr}(P_r-P_s)\brack{\ln{P_s}+1}\\
+\text{adding}&amp;=-\frac12\sum\limits_r\sum\limits_sW_{rs}\brack{P_r-P_s}\brack{\ln{P_r}-\ln{P_s}}\\
+\end{align*}
+\]</li>
+<li>so $\drv{H}\leq0$ and $H$ always decreases until system reaches equilibrium and $\drv{H}=0$</li>
+<li>this <em>kinda</em> proves the principle of equal <em>a priori</em> probabilities but not really - transition may not be independent of system&rsquo;s past (<em>hysteresis</em>)</li>
+</ul>
+<h2 id="relaxation-time">Relaxation time<a class="headerlink" href="#relaxation-time" title="Permanent link"></a></h2>
+<ul>
+<li>$H$ always decreases and eventually reaches minimum</li>
+<li>timescale for this is called <strong>relaxation time</strong></li>
+</ul>
+<h2 id="calculations">Calculations<a class="headerlink" href="#calculations" title="Permanent link"></a></h2>
+<ul>
+<li>consider an ensemble of systems with constant energy between $E$ and $E+\d E$</li>
+<li>there are $\Omega\brack{E}$ total states and $\Omega\brack{E,y_k}$ states where the parameter $y$ has the value $y_k$
+\[
+    P\brack{y_k}=\frac{\Omega\brack{E,y_k}}{\Omega\brack{E}}\\
+    \mean{y}=\frac{\sum_k\Omega\brack{E,y_k}y_k}{\Omega\brack{E}}
+\]</li>
+<li>using principle of equal <em>a priori</em> probabilities, all calculations are reduced to counting states</li>
+</ul>
+<h2 id="behaviour-of-density-of-states">Behaviour of density of states<a class="headerlink" href="#behaviour-of-density-of-states" title="Permanent link"></a></h2>
+<ul>
+<li>consider equilibrium system with volume $V$ and energy $E$</li>
+<li>ideal gas of monatomic particles<ul>
+<li>no internal degrees of freedom</li>
+<li>interatomic forces negligible</li>
+<li>energy is total translational kinetic energy
+<a name="kinetic energy"></a>\[
+E=\frac1{2m}\sum\limits_{i=1}^{N}\vct p_i^2
+\]</li>
+</ul>
+</li>
+<li>in limit as $E$ is much larger than ground state energy classical mechanics is valid</li>
+<li>$\Omega\brack{E,V}$ is just the number of phase-space cells with energy $E$ and volume $V$</li>
+<li>$\Omega\brack{E,V}\propto\int\limits_E^{E+\d E}\dd^3\vct r_1\dots\dd^3\vct r_N\dd^3\vct p_1\dots\dd^3\vct p_N$ where $\dd\vct r_i\def\dd x_i\dd y_i\dd z_i$ and similar for $\dd^3\vct p_i$</li>
+<li>for ideal gas, $E$ doesn&rsquo;t depend on positions so that integration can be performed immediately</li>
+<li>$\int\dd^r\vct r_i=V$ since position can extend over the volume of the container, and there are $N$ of these integrals</li>
+<li>$\Omega\brack{E,V}\propto V^N\chi\brack{E}$</li>
+<li>where $\chi\brack{E}=\int\limits_E^{E+\d E}\dd^3\vct p_1\dots\dd^3\vct p_N$ is independent of the volume</li>
+<li>the <a href="#kinetic energy">energy</a> has $3N$ square terms in it</li>
+<li>for constant $E$, the momentum components describe the locus of a sphere of radius $R(E)=\sqrt{2mE}$ in $3N$-dimensional space</li>
+<li>so $\chi(E)$ is proportional to volume of phase-space in a shell with radii $R(E)$ and $R(E+\d E)$</li>
+<li>that is equal to area of inner sphere (varies as $R^{3N-1}\propto E^{3N/2-1/2}$) multiplied by $\d R\propto\frac{\d E}{\sqrt E}$</li>
+<li>hence $\chi(E)\propto E^{3N/2-1/2}/E^{1/2}=E^{3N/2-1}$</li>
+<li>we now have $\Omega\brack{E,V}=kV^NE^{3N/2}$ where k is a constant and $N\gg1$</li>
+<li>since the number of degrees of freedom $f=3N$, the density of states varies as the <em>extensive macroscopic parameters</em> of the system raised to the an exceedingly large number</li>
+<li>density of states is incredibly rapidly increasing function of energy and volume</li>
+</ul>
+<h1 id="heat-and-work">Heat and work<a class="headerlink" href="#heat-and-work" title="Permanent link"></a></h1>
+<p>change in internal energy $\Delta E=Q-W$ where $Q$ is the heat absorbed from surroundings and $W$ is the work done on the surroundings
+<a name="first law"></a><strong>first law of thermodynamics</strong></p>
+<h2 id="macrostates-and-microstates">Macrostates and microstates<a class="headerlink" href="#macrostates-and-microstates" title="Permanent link"></a></h2>
+<ul>
+<li>it&rsquo;s often possible to describe a system with a number of macroscopically measurable parameters</li>
+<li>independent, $x_1, x_2, \dots, x_n$ affect the equations of motion</li>
+<li>these are <em>external parameters</em></li>
+<li>a <strong>microstate</strong> is a state where the motion of each particle is exactly specified</li>
+<li>the energy of a microstate $r$ is a function of external parameters</li>
+<li>a <strong>macrostate</strong> is a defined by specifying the external parameters and other constraints</li>
+<li>ex. an isolated gas may be specified by its volume and total energy</li>
+<li>there are usually many microstates compatible with a macrostate</li>
+</ul>
+<h2 id="microscopic-interpretation-of-heat-and-work">Microscopic interpretation of heat and work<a class="headerlink" href="#microscopic-interpretation-of-heat-and-work" title="Permanent link"></a></h2>
+<ul>
+<li>Consider an ensemble of systems $A$ which are all in a given macrostate</li>
+<li>there are 2 different ways that the energy of $A$ can change by interacting with its environment<ul>
+<li>if external parameters remain the same, interaction is purely <em>thermal</em></li>
+<li>change in average energy is due to absorbed heat: $\Delta\mean E=Q$</li>
+<li>energy of individual microstates is unchanged</li>
+<li>only the distribution of systems in the ensemble changes</li>
+<li>if $A$ is thermally insulated from its environment, no heat can be tranferred</li>
+<li>$A$ can still interact with its surroundings</li>
+<li>external parameter can change to perform work on the surroundings</li>
+<li>change in mean energy is due to performed work: $\Delta\mean E=-W$</li>
+<li>energy changes even on a microscopic level because energies of microstates are dependent on external parameters</li>
+<li>systems still redistributed in the ensemble</li>
+</ul>
+</li>
+<li>work can be measured easily</li>
+<li>if system exerts a force on its surroundings and causes a displacement then the work done <strong>by $A$</strong> is given by $W=\vct F\cdot\vct x$</li>
+<li>in a general interaction there is heat exchanged and work performed so $Q\def\Delta\mean E+W$ </li>
+<li>$Q$ is the mean energy change <em><strong>not</strong> due to external parameters changing</em></li>
+<li>heat is not independent of this definition - work and mean energy can be measured experimentally but heat</li>
+</ul>
+<h2 id="quasi-static-processes">Quasi-static processes<a class="headerlink" href="#quasi-static-processes" title="Permanent link"></a></h2>
+<ul>
+<li>consider an interaction with a system $A$ that is carried out so slowly that $A$ remains arbitrarily close to equilibrium always</li>
+<li>this process is <strong>quasi-static</strong></li>
+<li>timescale is much longer than the relaxation time of system</li>
+<li>finite quasi-static change is built of many infinitesimal changes</li>
+<li>infinitesimal heat absorbed and work done by system with energy change is given by $\dbar Q\equiv\dd\mean E+\dbar W$</li>
+<li>$\dbar Q$ and $\dbar W$ are <em>infinitesimal</em> quantities, NOT the difference between two works or heats</li>
+<li>work done and heat absorbed depend on how the process is carried out so there is no &ldquo;before&rdquo; or &ldquo;after&rdquo; the process</li>
+<li>energy in a microstate is defined by its external parameters as $E_r=E_r(x_1,\dots,x_n)$</li>
+<li>if external parameters change then change in microstate energy: $\dd E_r=\sum\limits_i\pdrv{E_r}{x_i}\dd x_i$</li>
+<li>infinitesimal work done by the system while remaining in this state is $\dbar W_r=-\dd E_r = \sum\limits_i X_{ir}\dd x_i$ where $X_{ir}\def-\pdrv{E_r}{x_i}$ is called the <em>generalised force conjugate to the parameter $x_i$</em></li>
+<li>now consider an ensemble of systems</li>
+<li>if changes are quasi-static then all of the conjugate forces have mean values</li>
+<li>$\dbar W = \sum\limits_i\mean X_i\dd x_i$</li>
+<li>mean value of conjugate forces is derived from the equilibrium distribution of systems in ensemble</li>
+<li>work done by the system can be obtained by integrating the infinitesimal works</li>
+<li>most famous quasistatic work is that done by an expanding gas</li>
+<li>suppose the volume is the only external parameter</li>
+<li>work done in changing volume from $V$ to $V+\dd V$ is product of force and displacement along line of action of force</li>
+<li>mean equilibrium pressure is mean normal force per unit area on a surface element</li>
+<li>normal force on surface element $\dd\vct S_i$ is therefore $\mean p\dd\vct S_i$</li>
+<li>if the surface element goes through a displacement then the work done is $\dbar W = \mean p\sum\limits_i\dd\vct S_i\dd\vct x_i$</li>
+<li>so we can see that pressure is the generalised force conjugate to the volume</li>
+<li>suppose a quasistatic process changes the volume from $V_i$ to $V_f$ </li>
+<li>then the work done by the system in total is $W_{if} = \int\limits_{V_i}^{V_f}\mean p(V)\dd V$</li>
+</ul></article></body></html>
